@@ -76,7 +76,7 @@ export const Button = styled.button`
   left: 0;
   bottom: -50px;
   cursor: pointer;
-
+  width: 100px;
   &:active {
     transform: scale(0.95);
   }
