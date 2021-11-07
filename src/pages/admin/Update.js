@@ -64,9 +64,9 @@ const Update = () => {
       return;
     }
 
-    createProduct(formData, id);
+    updateProduct(formData, id);
 
-    async function createProduct(product, id) {
+    async function updateProduct(product, id) {
       const res = await fetch(API_URL + id, {
         method: "PUT",
         headers: {

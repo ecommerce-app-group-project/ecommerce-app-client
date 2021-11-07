@@ -1,5 +1,6 @@
 import Create from "./Create";
 import Update from "./Update";
+import DeleteProd from "./DeleteProduct";
 import { useState } from "react";
 import { SelectList, SelectContainer } from "./adminStyles";
 
@@ -47,7 +48,7 @@ export default function Admin() {
       </SelectContainer>
       {create && <Create />}
       {update && <Update />}
-      {deletePost && <Create />}
+      {deletePost && <DeleteProd />}
     </div>
   );
 }
