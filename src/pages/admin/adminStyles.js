@@ -107,3 +107,16 @@ export const SuccessMessage = styled(ErrorMessage)`
   background-color: #a6b089;
   color: white;
 `;
+
+export const SelectContainer = styled.ul`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+`;
+
+export const SelectList = styled.li`
+  list-style: none;
+  cursor: pointer;
+  font-weight: bold;
+`;
