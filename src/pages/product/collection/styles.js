@@ -10,14 +10,8 @@ export const Wrapper = styled.section`
   margin: 0 13%;
 `
 export const Grid = styled.div`
-   display: grid;
-   @media only screen and (min-width: 320px){
-     grid-template-columns: 1fr 1fr;
-   }
-   @media only screen and (min-width: 768px){
-     grid-template-columns: 1fr 1fr 1fr;
-   }
-   @media only screen and (min-width:1025px){
-     grid-template-columns: 1fr 1fr 1fr 1fr;
-   }
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
 `

@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 
 export const Box = styled.div`
-    width: 300px;
+    flex: 1 1 300px;
     box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
     border-radius: 10px;
     overflow: hidden;
     margin: 0.3vw;
+    position: relative;
+    margin: 10px;
 `;
 
 export const OverLay = styled.div`
@@ -26,15 +28,15 @@ export const OverLay = styled.div`
 `;
 
 export const SlideImg = styled.div`
-    height: 450px;
-    position: relative;
+    padding: 5px;
+    text-align: center;
     &:hover ${OverLay}{
        visibility: visible;
     }
 `;
 export const Img = styled.img`
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 200px;
     object-fit: cover;
     box-sizing: border-box;
 `;

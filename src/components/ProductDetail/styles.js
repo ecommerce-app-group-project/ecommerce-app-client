@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import { mobile } from '../../utlis/responsive';
 
 export const Card = styled.div`
-    margin: 10% 16%;
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 20%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 1rem;
@@ -10,14 +12,14 @@ export const Card = styled.div`
 `;
 
 export const Img = styled.img`
-    width: 100%;
+    width: 90%;
     display: block;
-    height: 100%;
+    height: 90%;
     ${mobile({height: '90%',width: '90%',margin: '5%'})}
 `;
 
 export const CardContent = styled.div`
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
 `;
 
 export const ProductPrice = styled.div`
@@ -30,8 +32,8 @@ export const ProductPrice = styled.div`
 `;
 
 export const ProductInfo = styled.div`
-    margin: 1rem 0;
-    font-size: 0.8rem;
+    margin: 1.5rem 0;
+    font-size: 1rem;
 
 `;
 export const ProductTitle = styled.div`
