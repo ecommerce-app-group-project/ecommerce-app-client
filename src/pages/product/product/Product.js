@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {Box,SlideImg,Direct,Detail,Img,Title,Price,OverLay } from './styles'
 
 function Product({product,removeProduct}) {
-  const {id,image,title,category,description,price,rating} = product;
+  const {id,image,title,price} = product;
   
   return (
     <Box>

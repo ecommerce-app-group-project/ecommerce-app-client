@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Product from '../product/Product'
 import Loading from '../Loading'
-import  { Wrapper,Grid } from './styles';
+import { Wrapper, Grid } from './styles'
 
 const Collection = () => {
   const url = 'https://fakestoreapi.com/products?limit=6'
@@ -50,9 +50,13 @@ const Collection = () => {
   return (
     <Wrapper>
       <h1>Our Collection</h1>
-      <Grid >
+      <Grid>
         {collection.map((product) => (
-          <Product product={product} removeProduct={removeProduct} key={product.id}/>
+          <Product
+            product={product}
+            removeProduct={removeProduct}
+            key={product.id}
+          />
         ))}
       </Grid>
     </Wrapper>
