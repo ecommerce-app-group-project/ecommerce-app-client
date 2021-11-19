@@ -1,40 +1,40 @@
-import React, { useState, useEffect } from 'react'
-import Product from '../product/Product'
-import Loading from '../Loading'
-import { Wrapper, Grid } from './styles'
+import React, { useState, useEffect } from "react";
+import Product from "../product/Product";
+import Loading from "../Loading";
+import { Wrapper, Grid } from "./styles";
 
 const Collection = () => {
-  const url = 'https://fakestoreapi.com/products?limit=6'
+  const url = "https://fakestoreapi.com/products?limit=6";
 
-  const [loading, setLoading] = useState(true)
-  const [collection, setCollection] = useState([])
+  const [loading, setLoading] = useState(true);
+  const [collection, setCollection] = useState([]);
 
   const removeProduct = (id) => {
-    const newCollection = collection.filter((product) => product.id !== id)
-    setCollection(newCollection)
-  }
+    const newCollection = collection.filter((product) => product.id !== id);
+    setCollection(newCollection);
+  };
 
   const fetchcollection = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      const response = await fetch(url)
-      const collection = await response.json()
-      setLoading(false)
-      setCollection(collection)
+      const response = await fetch(url);
+      const collection = await response.json();
+      setLoading(false);
+      setCollection(collection);
     } catch (error) {
-      setLoading(false)
-      console.log(error)
+      setLoading(false);
+      console.log(error);
     }
-  }
+  };
   useEffect(() => {
-    fetchcollection()
-  }, [])
+    fetchcollection();
+  }, []);
   if (loading) {
     return (
       <main>
         <Loading />
       </main>
-    )
+    );
   }
   if (collection.length === 0) {
     return (
@@ -44,7 +44,7 @@ const Collection = () => {
           <button onClick={() => fetchcollection()}>refresh</button>
         </div>
       </main>
-    )
+    );
   }
 
   return (
@@ -60,7 +60,7 @@ const Collection = () => {
         ))}
       </Grid>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Collection
+export default Collection;

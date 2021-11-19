@@ -76,7 +76,7 @@ export const Button = styled.button`
   left: 0;
   bottom: -50px;
   cursor: pointer;
-
+  width: 100px;
   &:active {
     transform: scale(0.95);
   }
@@ -106,4 +106,17 @@ export const ErrorMessage = styled.div`
 export const SuccessMessage = styled(ErrorMessage)`
   background-color: #a6b089;
   color: white;
+`;
+
+export const SelectContainer = styled.ul`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+`;
+
+export const SelectList = styled.li`
+  list-style: none;
+  cursor: pointer;
+  font-weight: bold;
 `;
