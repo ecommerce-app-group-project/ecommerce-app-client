@@ -1,0 +1,17 @@
+.cart__innerWrapper {
+  height: max-content;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.Cart__cartTotal {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.cart{
+  text-align: center;
+  color:lightblue;
+  padding-bottom: 50px;
+}
+

@@ -12,9 +12,9 @@ export const Card = styled.div`
 `;
 
 export const Img = styled.img`
-    width: 90%;
+    width: 60%;
     display: block;
-    height: 90%;
+    height: 80%;
     ${mobile({height: '90%',width: '90%',margin: '5%'})}
 `;
 

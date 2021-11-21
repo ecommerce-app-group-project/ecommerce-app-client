@@ -1,21 +1,30 @@
-import React from 'react';
-import {Rate,StarOuter,StarInner} from './styles'
+import { v4 as uuidv4 } from "uuid";
+import './Rating.css'
 
-export default function Rating(props) {
-  const { rating, numReviews } = props;
-
-  const totalStars = 5; 
-  const starPercentage = (rating/totalStars)*100;
-  const starPercentageRouned = `${Math.round(starPercentage/10)*10}%`
-
-  
-  
+const Rating = ({ value, text, color }) => {
   return (
-    <Rate>
-      <StarOuter>
-        <StarInner style={{width: starPercentageRouned}}/>
-      </StarOuter>
-      
-    </Rate>
-  )    
-}
+    <div className='rating'>
+      {[1, 2, 3, 4, 5].map((rate) => (
+        <span key={uuidv4()}>
+          <i
+            style={{ color }}
+            className={
+              value + 1 === rate + 0.5
+                ? "fas fa-star-half-alt"
+                : value >= rate
+                ? "fas fa-star"
+                : "far fa-star"
+            }
+          ></i>
+        </span>
+      ))}
+      <span>{text && text}</span>
+    </div>
+  );
+};
+
+Rating.defaultProps = {
+  color: "#FFA41C",
+};
+
+export default Rating;

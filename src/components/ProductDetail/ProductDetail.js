@@ -3,8 +3,7 @@ import { useParams } from "react-router";
 import axios from "axios";
 import Loading from "../../pages/product/Loading";
 import { useContext } from 'react'
-import { Cart } from '../../Context'
-
+import CartContext from '../../context/cart/CartContext'
 import {
   Img,
   Card,
@@ -17,7 +16,7 @@ import {
 } from "./styles";
 
 function ProductDetail() {
-  const { cartItems, setCartItems } = useContext(Cart)
+  const { addToCart } = useContext(CartContext)
 
   const { id } = useParams()
   const [product, setProduct] = useState([])
@@ -50,26 +49,17 @@ function ProductDetail() {
       <Img src={product.image} alt='image of product' />
       <CardContent>
         <ProductTitle>{product.title}</ProductTitle>
-        <ProductPrice>
-          Price: <span>${product.price}</span>{' '}
-        </ProductPrice>
+
         <ProductInfo>
           <h2>About this item: </h2>
           <p>{product.description}</p>
         </ProductInfo>
+        <ProductPrice>
+          Price: <span>${product.price}</span>{' '}
+        </ProductPrice>
+
         <Action>
-          {cartItems.includes(product) ? (
-            <Button
-              onClick={() =>
-                setCartItems(cartItems.filter((c) => c.id !== product.id))
-              }>
-              Remove from Cart
-            </Button>
-          ) : (
-            <Button onClick={() => setCartItems([...cartItems, product])}>
-              Add to Cart
-            </Button>
-          )}
+          <Button onClick={() => addToCart(product)}>Add to basket</Button>
         </Action>
       </CardContent>
     </Card>

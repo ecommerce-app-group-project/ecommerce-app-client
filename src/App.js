@@ -9,10 +9,13 @@ import ProductDetail from "./components/ProductDetail/ProductDetail";
 //pages
 import Home from "./pages/home/Home";
 import NotFound from "./pages/notFound/NotFound";
-import CartPage from "./pages/cart/Cart";
+
 import Auth from "./pages/account/Account";
 import Collection from "./pages/product/collection/Collection";
 import Admin from "./pages/admin/Admin";
+import Cart from './components/Cart/Cart'
+
+// import CartItem from "./components/CartItem";
 
 
 function App() {
@@ -23,10 +26,11 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path='/'>
-            <Home/>
+            <Home />
           </Route>
           <Route exact path='/cart'>
-            <CartPage/>
+            <Cart/>
+            
           </Route>
           <Route exact path='/auth'>
             <Auth />

@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import Context from './Context'
+import CartState from './context/cart/CartState'
 ReactDOM.render(
   <React.StrictMode>
-    <Context>
+    <CartState>
       <App />
-    </Context>
+    </CartState>
   </React.StrictMode>,
   document.getElementById('root'),
 )
