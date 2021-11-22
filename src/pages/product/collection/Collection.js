@@ -9,11 +9,6 @@ const Collection = () => {
   const [loading, setLoading] = useState(true);
   const [collection, setCollection] = useState([]);
 
-  const removeProduct = (id) => {
-    const newCollection = collection.filter((product) => product.id !== id);
-    setCollection(newCollection);
-  };
-
   const fetchcollection = async () => {
     setLoading(true);
     try {
@@ -54,7 +49,6 @@ const Collection = () => {
         {collection.map((product) => (
           <Product
             product={product}
-            removeProduct={removeProduct}
             key={product.id}
           />
         ))}

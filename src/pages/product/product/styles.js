@@ -28,22 +28,22 @@ export const OverLay = styled.div`
 `;
 
 export const SlideImg = styled.div`
-    padding: 5px;
+    padding: 25px;
     text-align: center;
     &:hover ${OverLay}{
        visibility: visible;
     }
 `;
 export const Img = styled.img`
-    width: 300px;
+    width: 150px;
     height: 200px;
     object-fit: cover;
     box-sizing: border-box;
 `;
 
 export const Direct = styled.div`
-    width: 160px;
-    height: 40px;
+    width: 120px;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;

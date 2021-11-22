@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-function getWidthString(span) {
-  if(!span) return;
-  let width = span/12*100;
-  return `width: ${width}%;`;
-}
+// function getWidthString(span) {
+//   if(!span) return;
+//   let width = span/12*100;
+//   return `width: ${width}%;`;
+// }
 
 export const Wrapper = styled.section`
   margin: 0 13%;
