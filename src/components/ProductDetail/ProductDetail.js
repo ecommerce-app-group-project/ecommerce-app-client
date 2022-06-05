@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 import Loading from "../../pages/product/Loading";
-import { useContext } from 'react'
-import CartContext from '../../context/cart/CartContext'
+import { useContext } from "react";
+import CartContext from "../../context/cart/CartContext";
 import {
   Img,
   Card,
@@ -16,37 +16,37 @@ import {
 } from "./styles";
 
 function ProductDetail() {
-  const { addToCart } = useContext(CartContext)
+  const { addToCart } = useContext(CartContext);
 
-  const { id } = useParams()
-  const [product, setProduct] = useState([])
-  const [loading, setLoading] = useState(true)
-  const url = `https://fakestoreapi.com/products/${id}`
+  const { id } = useParams();
+  const [product, setProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const url = `https://retail-app-server.herokuapp.com/api/v1/products/${id}`;
 
   const fetchSingleProduct2 = async () => {
-    setLoading(true)
+    setLoading(true);
     axios
       .get(url)
       .then((res) => {
-        const result = res.data
-        setLoading(false)
-        setProduct(result)
+        const result = res.data;
+        setLoading(false);
+        setProduct(result);
       })
-      .catch((error) => console.log(error))
-  }
+      .catch((error) => console.log(error));
+  };
 
   useEffect(() => {
-    fetchSingleProduct2()
-  }, [])
+    fetchSingleProduct2();
+  }, []);
 
   if (loading) {
-    return <Loading />
+    return <Loading />;
   }
-  console.log(product)
+  console.log(product);
 
   return (
     <Card>
-      <Img src={product.image} alt='image of product' />
+      <Img src={product.image} alt="image of product" />
       <CardContent>
         <ProductTitle>{product.title}</ProductTitle>
 
@@ -55,7 +55,7 @@ function ProductDetail() {
           <p>{product.description}</p>
         </ProductInfo>
         <ProductPrice>
-          Price: <span>${product.price}</span>{' '}
+          Price: <span>${product.price}</span>{" "}
         </ProductPrice>
 
         <Action>
@@ -63,7 +63,7 @@ function ProductDetail() {
         </Action>
       </CardContent>
     </Card>
-  )
+  );
 }
 
 export default ProductDetail;

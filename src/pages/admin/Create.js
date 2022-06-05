@@ -17,7 +17,7 @@ const Create = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const API_URL = "http://localhost:5000/api/v1/products";
+  const API_URL = "https://retail-app-server.herokuapp.com/api/v1/products";
 
   const formSubmitted = (e) => {
     e.preventDefault();
